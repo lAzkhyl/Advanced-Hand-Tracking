@@ -9,13 +9,11 @@
 
 ```markdown
 
----
 
 ## 🚀 Overview
 
 Advanced Hand Tracking is a lightweight Python application for tracking 21 hand landmarks in real-time using [MediaPipe Hands](https://mediapipe.dev/) and OpenCV. Each landmark coordinate is smoothed with a One Euro Filter to reduce jitter and noise. The app also features dead-zone handling and dynamic scaling based on palm width, ensuring the landmark visualization adjusts seamlessly to the user’s hand size.
 
----
 
 ## ✨ Key Features
 
@@ -33,8 +31,6 @@ Advanced Hand Tracking is a lightweight Python application for tracking 21 hand 
 
 - Command-Line Configuration
   Supports --device, --width, --height, --min_detection_confidence, and --min_tracking_confidence for easy camera and MediaPipe tuning.
-
----
 
 ```
 
