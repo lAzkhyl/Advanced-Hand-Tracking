@@ -1,3 +1,4 @@
+```markdown
 # Advanced Hand Tracking
 
 > Advanced Hand Tracking — Real-time, smooth hand‐landmark tracking powered by MediaPipe and One Euro Filter.
@@ -5,7 +6,7 @@
 <p align="center">
   <img src="assets/demo.png" alt="Demo Screenshot" width="600"/>
 </p>
-```markdown
+
 ---
 
 ## 🚀 Overview
