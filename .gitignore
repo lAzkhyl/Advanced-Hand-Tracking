@@ -1,0 +1,28 @@
+# Ignore raw video or image files in the root folder
+*.mp4
+*.bmp
+
+# But keep any files inside the 'assets' folder
+!assets/*.bmp
+!assets/*.png
+!assets/*.jpg
+!assets/*.jpeg
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment folders
+venv/
+.venv/
+env/
+
+# Editor settings
+.vscode/
+.idea/
+
+# OS/system files
+.DS_Store
+Thumbs.db
