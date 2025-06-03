@@ -24,13 +24,13 @@ Advanced Hand Tracking is a lightweight Python application for tracking 21 hand 
   Applies One Euro Filter to both X and Y coordinates of each landmark, minimizing noise without sacrificing responsiveness.
 
 - Dynamic Scaling
-  Measures palm width (distance from wrist to middle-finger base) and calculates a `scale_factor`, so line thickness and circle sizes adapt to hand size in real-time.
+  Measures palm width (distance from wrist to middle-finger base) and calculates a scale_factor, so line thickness and circle sizes adapt to hand size in real-time.
 
 - Dead-Zone Handling  
-  When the average movement of all landmarks falls below `DEAD_ZONE_THRESHOLD`, landmarks stay locked to their last valid positions, preventing flicker.
+  When the average movement of all landmarks falls below DEAD_ZONE_THRESHOLD, landmarks stay locked to their last valid positions, preventing flicker.
 
 - Command-Line Configuration
-  Supports `--device`, `--width`, `--height`, `--min_detection_confidence`, and `--min_tracking_confidence` for easy camera and MediaPipe tuning.
+  Supports --device, --width, --height, --min_detection_confidence, and --min_tracking_confidence for easy camera and MediaPipe tuning.
 
 ---
 
@@ -49,12 +49,12 @@ Advanced Hand Tracking is a lightweight Python application for tracking 21 hand 
 
 ````
 
-- `assets/`  — Stores demonstration images or other media (e.g., `demo.png`).
-- `hand_tracking.py`  — Core Python script running detection and rendering.
-- `requirements.txt`  — Specifies exact dependency versions for reproducibility.
-- `README.md`  — Project overview, installation, usage, and details.
-- `LICENSE`  — Project license (MIT).
-- `.gitignore`  — Files and folders to ignore in version control.
+- assets  — Stores demonstration images or other media (e.g., demo.png).
+- hand_tracking.py  — Core Python script running detection and rendering.
+- requirements.txt  — Specifies exact dependency versions for reproducibility.
+- README.md  — Project overview, installation, usage, and details.
+- LICENSE  — Project license (MIT).
+- .gitignore  — Files and folders to ignore in version control.
 
 ---
 
@@ -64,7 +64,7 @@ Advanced Hand Tracking is a lightweight Python application for tracking 21 hand 
 - OpenCV 4.9.0.80  
 - MediaPipe 0.10.10
 
-Dependencies such as `numpy` and `argparse` are pulled in automatically via `opencv-python` and `mediapipe`.
+Dependencies such as numpy and argparse are pulled in automatically via opencv-python and mediapipe.
 
 ---
 
