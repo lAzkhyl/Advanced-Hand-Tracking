@@ -36,9 +36,9 @@ Advanced Hand Tracking is a lightweight Python application for tracking 21 hand 
 
 ---
 
-## 📁 Project Structure
-
 ```
+
+## 📁 Project Structure
 
 * Advanced Hand Tracking/
 * ├── assets/
