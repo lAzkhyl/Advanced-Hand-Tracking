@@ -1,7 +1,7 @@
 ```markdown
 # Advanced Hand Tracking
 
-> **Advanced Hand Tracking** — Real-time, smooth hand‐landmark tracking powered by MediaPipe and One Euro Filter.
+> Advanced Hand Tracking — Real-time, smooth hand‐landmark tracking powered by MediaPipe and One Euro Filter.
 
 <p align="center">
   <img src="assets/demo.png" alt="Demo Screenshot" width="600"/>
@@ -11,25 +11,25 @@
 
 ## 🚀 Overview
 
-**Advanced Hand Tracking** is a lightweight Python application for tracking 21 hand landmarks in real-time using [MediaPipe Hands](https://mediapipe.dev/) and OpenCV. Each landmark coordinate is smoothed with a One Euro Filter to reduce jitter and noise. The app also features dead-zone handling and dynamic scaling based on palm width, ensuring the landmark visualization adjusts seamlessly to the user’s hand size.
+Advanced Hand Tracking is a lightweight Python application for tracking 21 hand landmarks in real-time using [MediaPipe Hands](https://mediapipe.dev/) and OpenCV. Each landmark coordinate is smoothed with a One Euro Filter to reduce jitter and noise. The app also features dead-zone handling and dynamic scaling based on palm width, ensuring the landmark visualization adjusts seamlessly to the user’s hand size.
 
 ---
 
 ## ✨ Key Features
 
-- **21-Point Landmark Detection**  
+- 21-Point Landmark Detection
   Utilizes MediaPipe Hands to identify precise joint locations for each finger and the wrist.
 
-- **One Euro Filter for Smoothing**  
+- One Euro Filter for Smoothing
   Applies One Euro Filter to both X and Y coordinates of each landmark, minimizing noise without sacrificing responsiveness.
 
-- **Dynamic Scaling**  
+- Dynamic Scaling
   Measures palm width (distance from wrist to middle-finger base) and calculates a `scale_factor`, so line thickness and circle sizes adapt to hand size in real-time.
 
-- **Dead-Zone Handling**  
+- Dead-Zone Handling  
   When the average movement of all landmarks falls below `DEAD_ZONE_THRESHOLD`, landmarks stay locked to their last valid positions, preventing flicker.
 
-- **Command-Line Configuration**  
+- Command-Line Configuration
   Supports `--device`, `--width`, `--height`, `--min_detection_confidence`, and `--min_tracking_confidence` for easy camera and MediaPipe tuning.
 
 ---
@@ -38,31 +38,31 @@
 
 ```
 
-Advanced Hand Tracking/
-├── assets/
-│   └── demo.png                # (Optional) Example screenshot of output
-├── app.py                      # Main application script
-├── requirements.txt            # Python dependencies
-├── README.md                   # This documentation
-├── LICENSE                     # MIT License
-└── .gitignore                  # Git ignore rules
+* Advanced Hand Tracking/
+* ├── assets/
+* │   └── demo.png                # (Optional) Example screenshot of output
+* ├── app.py                      # Main application script
+* ├── requirements.txt            # Python dependencies
+* ├── README.md                   # This documentation
+* ├── LICENSE                     # MIT License
+* └── .gitignore                  # Git ignore rules
 
 ````
 
-- **`assets/`**  — Stores demonstration images or other media (e.g., `demo.png`).
-- **`hand_tracking.py`**  — Core Python script running detection and rendering.
-- **`requirements.txt`**  — Specifies exact dependency versions for reproducibility.
-- **`README.md`**  — Project overview, installation, usage, and details.
-- **`LICENSE`**  — Project license (MIT).
-- **`.gitignore`**  — Files and folders to ignore in version control.
+- `assets/`  — Stores demonstration images or other media (e.g., `demo.png`).
+- `hand_tracking.py`  — Core Python script running detection and rendering.
+- `requirements.txt`  — Specifies exact dependency versions for reproducibility.
+- `README.md`  — Project overview, installation, usage, and details.
+- `LICENSE`  — Project license (MIT).
+- `.gitignore`  — Files and folders to ignore in version control.
 
 ---
 
 ## ⚙️ Requirements
 
-- **Python 3.7+**  
-- **OpenCV 4.9.0.80**  
-- **MediaPipe 0.10.10**
+- Python 3.7+  
+- OpenCV 4.9.0.80  
+- MediaPipe 0.10.10
 
 Dependencies such as `numpy` and `argparse` are pulled in automatically via `opencv-python` and `mediapipe`.
 
@@ -70,8 +70,8 @@ Dependencies such as `numpy` and `argparse` are pulled in automatically via `ope
 
 ## 🛠️ Installation
 
-1. **Clone this repository**  
-   ```bash
+1. Clone this repository  
+   bash
    git clone https://github.com/username/Advanced Hand Tracking.git
    cd Advanced Hand Tracking
 ````
@@ -84,13 +84,13 @@ Dependencies such as `numpy` and `argparse` are pulled in automatically via `ope
    # venv\Scripts\activate         # Windows
    ```
 
-3. **Install dependencies**
+3. Install dependencies
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Run the application**
+4. Run the application
 
    ```bash
    python hand_tracking.py [ARGS]
@@ -115,7 +115,7 @@ Dependencies such as `numpy` and `argparse` are pulled in automatically via `ope
 | `--min_detection_confidence` | `float` | `0.7`   | Minimum confidence threshold for initial hand landmark detection.   |
 | `--min_tracking_confidence`  | `float` | `0.5`   | Minimum confidence threshold for landmark tracking after detection. |
 
-> **Note:** If the camera cannot open or the device index is invalid, the application will exit silently.
+> Note: If the camera cannot open or the device index is invalid, the application will exit silently.
 
 ---
 
@@ -190,10 +190,10 @@ class OneEuroFilter:
         return x_hat
 ```
 
-* **freq** (Hz): Estimated sampling frequency (e.g., camera at 30 FPS).
-* **mincutoff** (Hz): Base cutoff frequency—controls how much smoothing is applied when motion is slow.
-* **beta** (Hz): Coefficient that increases cutoff when motion accelerates, making the filter more responsive.
-* **dcutoff** (Hz): Cutoff frequency for smoothing the derivative (`dx_hat`).
+* freq (Hz): Estimated sampling frequency (e.g., camera at 30 FPS).
+* mincutoff (Hz): Base cutoff frequency—controls how much smoothing is applied when motion is slow.
+* beta (Hz): Coefficient that increases cutoff when motion accelerates, making the filter more responsive.
+* dcutoff (Hz): Cutoff frequency for smoothing the derivative (`dx_hat`).
 
 ### 2. MediaPipe Hands Initialization
 
@@ -246,8 +246,8 @@ scale_factor = current_palm_width / ref_width
 scale_factor = max(0.5, min(2.0, scale_factor))
 ```
 
-* **ref\_width** is set once when a hand is first detected—serves as the reference palm width.
-* **scale\_factor** = `current_palm_width / ref_width`, clamped between 0.5 and 2.0.
+* ref\_width is set once when a hand is first detected—serves as the reference palm width.
+* scale\_factor = `current_palm_width / ref_width`, clamped between 0.5 and 2.0.
 * Used in `draw_landmarks()` to scale line thickness and circle radii.
 
 ### 5. Dead-Zone Handling
@@ -311,26 +311,26 @@ def draw_landmarks(image, landmark_point, scale_factor=1.0):
 
 ## 🎬 Example Usage
 
-1. **Run with 1280×720 resolution**
+1. Run with 1280×720 resolution
 
    ```bash
    python hand_tracking.py --device 0 --width 1280 --height 720
    ```
 
-2. **Run with lower confidence thresholds** (e.g., in dim lighting)
+2. Run with lower confidence thresholds (e.g., in dim lighting)
 
    ```bash
    python hand_tracking.py --min_detection_confidence 0.5 --min_tracking_confidence 0.3
    ```
 
-3. **Combine multiple arguments**
+3. Combine multiple arguments
 
    ```bash
    python hand_tracking.py --device 1 --width 640 --height 480 \
        --min_detection_confidence 0.8 --min_tracking_confidence 0.6
    ```
 
-* Press **ESC** to exit the real-time window.
+* Press ESC to exit the real-time window.
 * If no hand is detected, the last valid landmarks remain onscreen for up to `MAX_NO_DETECTION` frames, after which the state resets.
 
 ---
@@ -342,7 +342,7 @@ opencv-python==4.9.0.80
 mediapipe==0.10.10
 ```
 
-> **Tip:** For more flexibility, use `>=` instead of `==`.
+> Tip: For more flexibility, use `>=` instead of `==`.
 
 ---
 
@@ -369,27 +369,27 @@ Refer to the `LICENSE` file for the complete text.
 
 ## 🤝 Contributing
 
-1. **Fork** this repository and create a new branch:
+1. Fork this repository and create a new branch:
 
    ```bash
    git checkout -b feature-name
    ```
-2. **Make your changes** (ensure code follows PEP8 style).
-3. **Commit** and **push** to your fork:
+2. Make your changes (ensure code follows PEP8 style).
+3. Commit and push to your fork:
 
    ```bash
    git add .
    git commit -m "Add feature XYZ"
    git push origin feature-name
    ```
-4. **Open a Pull Request** on GitHub with a clear description and screenshots (if applicable).
+4. Open a Pull Request on GitHub with a clear description and screenshots (if applicable).
 
 ---
 
 ## 📫 Contact
 
-* **GitHub:** [@username](https://github.com/lAzkhyl)
-* **Email:** `tartareon@ugd4.my.id`
+* GitHub: [@username](https://github.com/lAzkhyl)
+* Email: `tartareon@ugd4.my.id`
 
 If you have questions, issues, or suggestions, please open an Issue on GitHub.
 
@@ -398,4 +398,3 @@ If you have questions, issues, or suggestions, please open an Issue on GitHub.
 <p align="center">
   <sub>Made with ❤️ by lAz — Advanced Hand Tracking v1.0.0</sub>
 </p>
-```
