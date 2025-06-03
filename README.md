@@ -38,12 +38,13 @@ Advanced Hand Tracking is a lightweight Python application for tracking 21 hand 
 
 * Advanced Hand Tracking/
 * ├── assets/
-* │   └── demo.png                # (Optional) Example screenshot of output
-* ├── app.py                      # Main application script
-* ├── requirements.txt            # Python dependencies
-* ├── README.md                   # This documentation
-* ├── LICENSE                     # MIT License
-* └── .gitignore                  # Git ignore rules
+* │   └── images1-6
+* │   └── video
+* ├── app.py
+* ├── requirements.txt
+* ├── README.md
+* ├── LICENSE
+* └── .gitignore
 
 ---
 
