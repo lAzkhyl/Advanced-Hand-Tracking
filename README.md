@@ -45,15 +45,6 @@ Advanced Hand Tracking is a lightweight Python application for tracking 21 hand 
 * ├── LICENSE                     # MIT License
 * └── .gitignore                  # Git ignore rules
 
-````
-
-- assets  — Stores demonstration images or other media (e.g., demo.png).
-- hand_tracking.py  — Core Python script running detection and rendering.
-- requirements.txt  — Specifies exact dependency versions for reproducibility.
-- README.md  — Project overview, installation, usage, and details.
-- LICENSE  — Project license (MIT).
-- .gitignore  — Files and folders to ignore in version control.
-
 ---
 
 ## ⚙️ Requirements
@@ -69,10 +60,10 @@ Dependencies such as numpy and argparse are pulled in automatically via opencv-p
 ## 🛠️ Installation
 
 1. Clone this repository  
-   bash
+   ```bash
    git clone https://github.com/username/Advanced Hand Tracking.git
    cd Advanced Hand Tracking
-````
+   ```
 
 2. *(Optional but recommended)* Create and activate a virtual environment:
 
